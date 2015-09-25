@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+require "optparse"
+require "multi_table_of_prime_number/generator"
+require "multi_table_of_prime_number/multiplication_table"
+
+options = {}
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: #$0 -c count"
+
+  opts.on "-c", "--count NUMBER", "Size of multiplication table" do |cnt|
+    options[:count] = cnt.to_i
+  end
+
+	opts.on "-o", "--operation addition/multiplication", "Operations" do |optn|
+		options[:operation] = optn
+	end
+
+	opts.on "-sqrt", "--sqrt YES/NO", "Sqrt of Prime numbers" do |sqrt_of_prime|
+		options[:sqrt] = sqrt_of_prime.upcase
+	end
+
+  opts.on "-h", "--help", "Shows usage" do
+    warn opts
+    exit
+  end
+end.parse!
+
+puts MultiTableOfPrimeNumber::MultiplicationTable.new(MultiTableOfPrimeNumber::Generator.new.generate_prime_numbers(options[:count]),options[:operation],options[:sqrt]).print!

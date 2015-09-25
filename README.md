@@ -1,2 +1,81 @@
-# multi_table_prime_numbers
-Write a program that prints a multiplication/square root of prime numbers/addition table of primes numbers.  The program should take an argument from the command line that specifies the amount of prime  numbers to generate and print out a multiplication/square root of prime numbers/addition table for these prime numbers.
+#Description
+Write a program that prints a multiplication/square root of prime numbers/addition table of primes numbers. The program should take an argument from the command line that specifies the amount of prime numbers to generate and print out a multiplication/square root of prime numbers/addition table for these prime numbers.
+
+#Run
+
+scenario: 1 - 
+#Display multiplication table of prime numbers
+
+$bundle exec bin/prime_number_table --count 10 --operation multiplication --sqrt no
+
+#output:
+         |       2       3       5       7      11      13      17      19      23      29
+       - |--------------------------------------------------------------------------------
+       2 |       4       6      10      14      22      26      34      38      46      58
+       3 |       6       9      15      21      33      39      51      57      69      87
+       5 |      10      15      25      35      55      65      85      95     115     145
+       7 |      14      21      35      49      77      91     119     133     161     203
+      11 |      22      33      55      77     121     143     187     209     253     319
+      13 |      26      39      65      91     143     169     221     247     299     377
+      17 |      34      51      85     119     187     221     289     323     391     493
+      19 |      38      57      95     133     209     247     323     361     437     551
+      23 |      46      69     115     161     253     299     391     437     529     667
+      29 |      58      87     145     203     319     377     493     551     667     841
+
+scenario: 2 
+#Display square root of multiplication table of prime numbers
+
+$bundle exec bin/prime_number_table --count 10 --operation multiplication --sqrt yes
+
+#output:
+         |       4       9      25      49     121     169     289     361     529     841
+       - |--------------------------------------------------------------------------------
+       4 |      16      36     100     196     484     676    1156    1444    2116    3364
+       9 |      36      81     225     441    1089    1521    2601    3249    4761    7569
+      25 |     100     225     625    1225    3025    4225    7225    9025   13225   21025
+      49 |     196     441    1225    2401    5929    8281   14161   17689   25921   41209
+     121 |     484    1089    3025    5929   14641   20449   34969   43681   64009  101761
+     169 |     676    1521    4225    8281   20449   28561   48841   61009   89401  142129
+     289 |    1156    2601    7225   14161   34969   48841   83521  104329  152881  243049
+     361 |    1444    3249    9025   17689   43681   61009  104329  130321  190969  303601
+     529 |    2116    4761   13225   25921   64009   89401  152881  190969  279841  444889
+     841 |    3364    7569   21025   41209  101761  142129  243049  303601  444889  707281
+
+scenario:3 
+# Display addition table of prime numbers
+$ bundle exec bin/prime_number_table --count 10 --operation addition --sqrt no
+
+#output:
+         |       2       3       5       7      11      13      17      19      23      29
+       - |--------------------------------------------------------------------------------
+       2 |       4       5       7       9      13      15      19      21      25      31
+       3 |       5       6       8      10      14      16      20      22      26      32
+       5 |       7       8      10      12      16      18      22      24      28      34
+       7 |       9      10      12      14      18      20      24      26      30      36
+      11 |      13      14      16      18      22      24      28      30      34      40
+      13 |      15      16      18      20      24      26      30      32      36      42
+      17 |      19      20      22      24      28      30      34      36      40      46
+      19 |      21      22      24      26      30      32      36      38      42      48
+      23 |      25      26      28      30      34      36      40      42      46      52
+      29 |      31      32      34      36      40      42      46      48      52      58
+scenario 4:
+#Display square root of addition table of prime numbers
+$ bundle exec bin/prime_number_table --count 10 --operation addition --sqrt yes
+
+#output
+       	 |       4       9      25      49     121     169     289     361     529     841
+       - |--------------------------------------------------------------------------------
+       4 |       8      13      29      53     125     173     293     365     533     845
+       9 |      13      18      34      58     130     178     298     370     538     850
+      25 |      29      34      50      74     146     194     314     386     554     866
+      49 |      53      58      74      98     170     218     338     410     578     890
+     121 |     125     130     146     170     242     290     410     482     650     962
+     169 |     173     178     194     218     290     338     458     530     698    1010
+     289 |     293     298     314     338     410     458     578     650     818    1130
+     361 |     365     370     386     410     482     530     650     722     890    1202
+     529 |     533     538     554     578     650     698     818     890    1058    1370
+     841 |     845     850     866     890     962    1010    1130    1202    1370    1682
+
+#Test
+
+$rspec
