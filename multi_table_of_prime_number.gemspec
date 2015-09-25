@@ -6,12 +6,11 @@ require 'multi_table_of_prime_number/version'
 Gem::Specification.new do |spec|
   spec.name          = "multi_table_of_prime_number"
   spec.version       = MultiTableOfPrimeNumber::VERSION
-  spec.authors       = ["Shanmuga S"]
-  spec.email         = ["shanmuga@therelative.co.uk"]
-
-  spec.summary       = %q{Multiplication table of prime numbers.}
-  spec.description   = %q{Multiplication table of prime numbers.}
-  spec.homepage      = "http://shan.org"
+  spec.authors       = ["Shanmuga Sundaram Sankara Pandian Muthu"]
+  spec.email         = ["shan@telekomatrix.com
+  spec.summary       = %q{Addition/Multiplication table of prime numbers and Square root of Addition/Multiplication table of prime numbers.}
+  spec.description   = %q{Addition/Multiplication table of prime numbers and Square root of Addition/Multiplication table of prime numbers}
+  spec.homepage      = "http://www.telekomatrix.co.uk"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
